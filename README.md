@@ -52,7 +52,7 @@ For example, if you want to manage the control of anncs.php, you may do the foll
         home.css
         login.css
     /database
-        anncs.php     *
+        anncs.php *
         auth.php
         database.php
     anncs.php
