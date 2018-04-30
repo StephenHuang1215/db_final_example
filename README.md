@@ -7,59 +7,59 @@ This is a sample code of the final project. For those who have no idea about the
 ## Folder Structure
 ```
 /example
-	/auth
-		(Backend files relative to "Auth")
-	/css
-		(Css files)
-	/database
-		(Main files of db operations)
-	home.php
-	(Files of the view)
+    /auth
+	    (Backend files relative to "Auth")
+    /css
+	    (Css files)
+    /database
+        (Main files of db operations)
+    home.php
+        (Files of the view)
 ```
 
 The sample structure we provided for you is:
 ```
 /example
-	/auth
-		login.php
-	/css
-		announce.css
-		event.css
-		home.css
-		login.css
-	/database
-		auth.php
-		database.php
-	anncs.php
-	events.php
-	home.php
-	login.php
-	signup.php
+    /auth
+        login.php
+    /css
+        announce.css
+        event.css
+        home.css
+        login.css
+    /database
+	    auth.php
+	    database.php
+    anncs.php
+    events.php
+    home.php
+    login.php
+    signup.php
 ```
 
 For example, if you want to manage the control of anncs.php, you may do the following changes by adding files (remark \*):
 ```
 /example
-	/anncs *
-		add.php *
-		delete.php *
-		edit.php *
-	/auth
-		login.php
-	/css
-		announce.css
-		event.css
-		home.css
-		login.css
-	/database
-		anncs.php *
-		auth.php
-		database.php
-	anncs.php
-	events.php
-	home.php
-	login.php
-	signup.php
+    /anncs *
+        add.php *
+        delete.php *
+        edit.php *
+    /auth
+        login.php
+    /css
+        announce.css
+        event.css
+        home.css
+        login.css
+    /database
+        anncs.php     *
+        auth.php
+        database.php
+    anncs.php
+    events.php
+    home.php
+    login.php
+    signup.php
 ```
 
 ## Diagram
