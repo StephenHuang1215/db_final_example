@@ -8,9 +8,9 @@ This is a sample code of the final project. For those who have no idea about the
 ```
 /example
     /auth
-	    (Backend files relative to "Auth")
+        (Backend files relative to "Auth")
     /css
-	    (Css files)
+        (Css files)
     /database
         (Main files of db operations)
     home.php
@@ -28,8 +28,8 @@ The sample structure we provided for you is:
         home.css
         login.css
     /database
-	    auth.php
-	    database.php
+        auth.php
+        database.php
     anncs.php
     events.php
     home.php
