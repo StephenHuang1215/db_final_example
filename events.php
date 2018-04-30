@@ -3,13 +3,13 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<title>登入</title>
+		<title>Events</title>
 		<meta name="description" content="">
 		<meta name="keywords" content="">
 		<link href="" rel="stylesheet">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<link rel="stylesheet" href="css/home.css">
-		<link rel="stylesheet" href="css/login.css">
+		<link rel="stylesheet" href="css/event.css">
 	</head>
 	<body>
 		<nav class="navbar navbar-default">
@@ -28,40 +28,44 @@
 						<li><a href="home.php">首頁 <span class="sr-only">(current)</span></a></li>
 					</ul>
 					<ul class="nav navbar-nav navbar-link">
-						<li><a href="events.php">活動列表 <span class="sr-only">(current)</span></a></li>
+						<li class="active"><a href="events.php">活動列表 <span class="sr-only">(current)</span></a></li>
 					</ul>
 					<ul class="nav navbar-nav navbar-link">
-						<li class="active"><a href="login.php">登入 <span class="sr-only">(current)</span></a></li>
+						<li><a href="login.php">登入 <span class="sr-only">(current)</span></a></li>
 					</ul>
 				</div>
 			</div>
 		</nav>
-		<div class="container login-wrapper">
-			<form action="auth/login.php" method="POST">
-				<div class="row">
-					<div class="col-md-9 col-md-offset-1">
-						<br><br><br>
-					</div>
-					<div class="col-md-5 col-md-offset-1">
-						<label>學號</label>
-						<input type="text" name="account" class="form-control">
-					</div>
-					<div class="col-md-12">
-						<br>
-					</div>
-					<div class="col-md-5 col-md-offset-1">
-						<label>密碼</label>
-						<input type="password" name="password" class="form-control">
-					</div>
-					<div class="col-md-6">
-						<button class="btn btn-default btn-login" type="submit">登入</button>
-					</div>
-					<div class="col-md-10 col-md-offset-1">
-						<br>
-						<a href="http://localhost/forgetpassword.php" class="text-notify">忘記密碼？</a>
-					</div>
-				</div>
-			</form>
+		<div class="container event-wrapper event-list">
+			<h3 class="title">活動列表</h3>
+			<br>
+			<table class="table text-center">
+				<tr>
+					<th class="text-center">項目</th>
+					<th class="text-center">規則</th>
+					<th class="text-center">報名</th>
+				</tr>
+				<tr>
+					<td>泡泡足球</td>
+					<td>像泡泡一樣的足球</td>
+					<td><a href="signup.php"><button class="btn btn-default btn-event">報名</button></a></td>
+				</tr>
+				<tr>
+					<td>足球小將</td>
+					<td>來比比誰是大掛逼</td>
+					<td><button class="btn btn-default btn-event">報名</button></td>
+				</tr>
+				<tr>
+					<td>命運時之門 zero</td>
+					<td>助手加油</td>
+					<td><button class="btn btn-default btn-event">報名</button></td>
+				</tr>
+				<tr>
+					<td>兩人十二腳</td>
+					<td>試試看</td>
+					<td><button class="btn btn-default btn-event">報名</button></td>
+				</tr>
+			</table>
 		</div>
 	</body>
 </html>
