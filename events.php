@@ -56,7 +56,7 @@
 					<td><button class="btn btn-default btn-event">報名</button></td>
 				</tr>
 				<tr>
-					<td>命運時之門 zero</td>
+					<td>命運石之門 zero</td>
 					<td>助手加油</td>
 					<td><button class="btn btn-default btn-event">報名</button></td>
 				</tr>
