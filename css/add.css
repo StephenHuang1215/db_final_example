@@ -1,0 +1,23 @@
+.add_title {
+	font-size:15px;
+	font-family:Microsoft JhengHei;
+	padding:10px;
+	margin:5px;
+	width:600px;
+	height:40px;
+}
+
+.add_description {
+	font-size:15px;
+	font-family:Microsoft JhengHei;
+	padding:10px;
+	margin:5px;
+	width:600px;
+	height:300px;
+}
+
+.add_header {
+	font-size:20px;
+	font-family:Microsoft JhengHei;
+	margin:5px;
+}

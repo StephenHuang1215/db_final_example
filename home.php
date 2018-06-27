@@ -37,14 +37,46 @@
 			</div>
 		</nav>
 		<div class="container announce-wrapper">
+			<!--Admin-->
+			<a href="anncs/add.php"><button class="btn btn-default btn-event">新增公告</button></a>
+			<a href="signup.php"><button class="btn btn-default btn-event">刪除公告</button></a>
 			<h3 class="title">最新公告</h3>
 			<div class="row">
 				<table class="table">
+					<?php
+					$servername = "localhost";
+	    			$username = "root";
+	    			$password = "tonytmwcmk15";
+	   				$databasename = "peweek";
+	    			$conn = new mysqli($servername, $username, $password, $databasename);
+				    if ($conn->connect_error) {
+				        die("Connection failed: " . $conn->connect_error);
+				    }
+
+				    $sql = "SELECT Announce_ID FROM Announcement ORDER BY Announce_ID DESC";
+				    $result = $conn->query($sql);
+				    if ($result->num_rows > 0) {
+					    while ($row = $result->fetch_assoc()) {
+					    	$Text_Name = "./AnncsText/" . $row[Announce_ID] . ".txt";
+					    	echo "<tr>";
+					    	$file = fopen($Text_Name, "r");
+					    	$title = fgets($file);
+					    	$date = fgets($file);
+					    	$date_length = strlen($date);
+					    	$date = substr($date,0, $date_length-11);
+					    	echo "<td class=\"td-data\">" . $date . "</td>";
+					    	echo "<td><a herf=\"anncs.php\">" . $title . "</a></td>";
+					    	echo "</tr>";
+					    }
+					} else echo "0 results";
+						
+
+					?>
 					<tr>
-						<td class="td-date">2018 / 09 / 06</td>
+						<td class="td-date">2018/09/06</td>
 						<td><a href="anncs.php">107學年度上學期 體育週開始報名啦！各系體幹看過來！</a></td>
 					</tr>
-					<tr>
+					<!--<tr>
 						<td class="td-date">2018 / 09 / 05</td>
 						<td><a href="anncs.php">107學年度 各系體幹名單</a></td>
 					</tr>
@@ -63,7 +95,7 @@
 					<tr>
 						<td class="td-date">2017 / 09 / 06</td>
 						<td><a href="anncs.php">106學年度 沒導聚的學生不用擔心，系辦照顧你</a></td>
-					</tr>
+					</tr>-->
 				</table>
 			</div>
 		</div>
