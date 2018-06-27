@@ -57,7 +57,8 @@
 				    $result = $conn->query($sql);
 				    if ($result->num_rows > 0) {
 					    while ($row = $result->fetch_assoc()) {
-					    	$Text_Name = "./AnncsText/" . $row[Announce_ID] . ".txt";
+					    	$ID = $row[Announce_ID];
+					    	$Text_Name = "./AnncsText/" . $ID . ".txt";
 					    	echo "<tr>";
 					    	$file = fopen($Text_Name, "r");
 					    	$title = fgets($file);
@@ -65,37 +66,11 @@
 					    	$date_length = strlen($date);
 					    	$date = substr($date,0, $date_length-11);
 					    	echo "<td class=\"td-data\">" . $date . "</td>";
-					    	echo "<td><a herf=\"anncs.php\">" . $title . "</a></td>";
+					    	echo "<td><a href=\"anncs.php?id=" . $ID . "\">" . $title . "</a></td>";
 					    	echo "</tr>";
 					    }
 					} else echo "0 results";
-						
-
 					?>
-					<tr>
-						<td class="td-date">2018/09/06</td>
-						<td><a href="anncs.php">107學年度上學期 體育週開始報名啦！各系體幹看過來！</a></td>
-					</tr>
-					<!--<tr>
-						<td class="td-date">2018 / 09 / 05</td>
-						<td><a href="anncs.php">107學年度 各系體幹名單</a></td>
-					</tr>
-					<tr>
-						<td class="td-date">2018 / 09 / 06</td>
-						<td><a href="anncs.php">107學年度 班代注意事項</a></td>
-					</tr>
-					<tr>
-						<td class="td-date">2017 / 09 / 06</td>
-						<td><a href="anncs.php">106學年度 交換學生太多之取消名單</a></td>
-					</tr>
-					<tr>
-						<td class="td-date">2017 / 09 / 05</td>
-						<td><a href="anncs.php">106學年度 系學會徵才</a></td>
-					</tr>
-					<tr>
-						<td class="td-date">2017 / 09 / 06</td>
-						<td><a href="anncs.php">106學年度 沒導聚的學生不用擔心，系辦照顧你</a></td>
-					</tr>-->
 				</table>
 			</div>
 		</div>

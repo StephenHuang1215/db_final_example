@@ -41,7 +41,9 @@
 				<a href="signup.php"><button class="btn btn-default btn-event">修改公告</button></a>
 				<a href="signup.php"><button class="btn btn-default btn-event">刪除公告</button></a>
 			<?php
-			$file = fopen("AnncsText/test.txt", "r");
+			$ID = $_GET['id'];
+			$Text_Name = "./AnncsText/" . $ID . ".txt";
+			$file = fopen($Text_Name, "r");
 			?>
 			<h3 class="title">
 				<?php
