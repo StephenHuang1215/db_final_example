@@ -12,6 +12,14 @@ if ($conn->connect_error) {
 date_default_timezone_set('Asia/Taipei');
 $datetime= date("Y/m/d H:i:s");
 
+$ID = $_GET['id'];
+if ($ID == 0);
+else {
+	$sql = "DELETE FROM Announcement WHERE Announce_ID = $ID";
+	if ($conn->query($sql) === TRUE);
+	else echo "Error: " . $sql . "<br>" . $conn->error;
+}
+
 $title = $_POST['title'];
 $description = $_POST['description'];
 

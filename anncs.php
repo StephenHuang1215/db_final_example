@@ -40,7 +40,7 @@
 				<!--Admin-->
 			<?php
 			$ID = $_GET['id'];
-			echo "<a href=\"signup.php?id=" . $ID . "\"><button class=\"btn btn-default btn-event\">修改公告</button></a>";
+			echo "<a href=\"./anncs/edit.php?id=" . $ID . "\"><button class=\"btn btn-default btn-event\">修改公告</button></a>";
 			echo "<a href=\"./anncs/delete.php?id=" . $ID . "\"><button class=\"btn btn-default btn-event\">刪除公告</button></a>";
 			/*<a href="signup.php"><button class="btn btn-default btn-event">修改公告</button></a>
 			<a href="delete.php?"><button class="btn btn-default btn-event">刪除公告</button></a>*/
@@ -67,8 +67,9 @@
 					while(! feof($file))
 	  				{
 	  					$data = fgets($file);
-	  					$data_length = strlen($data);  
-						echo "<p>".substr($data,0, $data_length-2)."</p>";
+	  					$data_length = strlen($data);
+	  					if ($data_length != 2) echo "<p>".substr($data,0, $data_length-2)."</p>";
+	  					else echo "<br>";
 	  				}
 					fclose($file);
 					?>
