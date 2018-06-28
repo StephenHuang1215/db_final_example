@@ -39,7 +39,7 @@
 		<div class="container announce-wrapper">
 			<!--Admin-->
 			<a href="anncs/add.php"><button class="btn btn-default btn-event">新增公告</button></a>
-			<a href="signup.php"><button class="btn btn-default btn-event">刪除公告</button></a>
+			<!--<a href="signup.php"><button class="btn btn-default btn-event">刪除公告</button></a>-->
 			<h3 class="title">最新公告</h3>
 			<div class="row">
 				<table class="table">
@@ -67,6 +67,7 @@
 					    	$date = substr($date,0, $date_length-11);
 					    	echo "<td class=\"td-data\">" . $date . "</td>";
 					    	echo "<td><a href=\"anncs.php?id=" . $ID . "\">" . $title . "</a></td>";
+					 		echo "<td><a href='anncs/delete.php?id=" . $ID . "' onclick=\"return confirm('使否確定要執行這個動作？');\"><button class=\"btn btn-default btn-event\">刪除公告</button></a>";
 					    	echo "</tr>";
 					    }
 					} else echo "0 results";

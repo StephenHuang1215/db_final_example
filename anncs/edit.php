@@ -45,24 +45,24 @@
 			<h3 class="title">修改公告</h3>
 			<br>
 			<?php
-				$ID = $_GET['id'];
-				echo "<form action='post.php?id=" . $ID . "'method='post'>";
-				echo "<h5 class='add_header'>標題</h5>";	
-				$Text_Name = "../AnncsText/" . $ID . ".txt";
-				$file = fopen($Text_Name, "r");
-				echo "<input type='text' name=title class='add_title' value='";
-				echo fgets($file) . "'><br><br>";
-				?>
-				<h5 class="add_header">內容</h5>
-				<?php
-				global $file;
-				echo "<textarea name=description class='add_description'>";
-				fgets($file);
-				while(! feof($file)) echo $data = fgets($file);
-	  			echo "</textarea><br><br>";
-				?>
-				<button type='reset' class="btn btn-default btn-event"> 取消</button>
-				<button type='submit' class="btn btn-default btn-event"> 儲存</button>
+			$ID = $_GET['id'];
+			echo "<form action='post.php?id=" . $ID . "'method='post'>";
+			echo "<h5 class='add_header'>標題</h5>";	
+			$Text_Name = "../AnncsText/" . $ID . ".txt";
+			$file = fopen($Text_Name, "r");
+			echo "<input type='text' name=title class='add_title' value='";
+			echo fgets($file) . "'><br><br>";
+			?>
+			<h5 class="add_header">內容</h5>
+			<?php
+			global $file;
+			echo "<textarea name=description class='add_description'>";
+			fgets($file);
+			while(! feof($file)) echo $data = fgets($file);
+  			echo "</textarea><br><br>";
+			?>
+			<button type='button' class="btn btn-default btn-event" onclick = "window.location.href='../home.php'"> 取消</button>
+			<button type='submit' class="btn btn-default btn-event"> 儲存</button>
 			</form>
 			</div>
 		</div>
