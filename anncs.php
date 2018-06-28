@@ -38,10 +38,12 @@
 		</nav>
 		<div class="container announce-wrapper">
 				<!--Admin-->
-				<a href="signup.php"><button class="btn btn-default btn-event">修改公告</button></a>
-				<a href="signup.php"><button class="btn btn-default btn-event">刪除公告</button></a>
 			<?php
 			$ID = $_GET['id'];
+			echo "<a href=\"signup.php?id=" . $ID . "\"><button class=\"btn btn-default btn-event\">修改公告</button></a>";
+			echo "<a href=\"./anncs/delete.php?id=" . $ID . "\"><button class=\"btn btn-default btn-event\">刪除公告</button></a>";
+			/*<a href="signup.php"><button class="btn btn-default btn-event">修改公告</button></a>
+			<a href="delete.php?"><button class="btn btn-default btn-event">刪除公告</button></a>*/
 			$Text_Name = "./AnncsText/" . $ID . ".txt";
 			$file = fopen($Text_Name, "r");
 			?>

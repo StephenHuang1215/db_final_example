@@ -37,7 +37,7 @@ fwrite($file, $description);
 fwrite($file, "  ");
 fclose($file);
  
-header("Location: ../anncs.php");
+header("Location: ../home.php");
 exit
 	
 ?>
