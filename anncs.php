@@ -70,6 +70,9 @@
 	  					if ($data_length != 2) echo "<p>".substr($data,0, $data_length-2)."</p>";
 	  					else echo "<br>";
 	  				}
+	  				echo "<br>";
+	  				$target_file = "./anncs/picture/" . $ID . ".jpg";
+	  				if (file_exists($target_file)) echo "<img src='" . $target_file . "'>";
 					fclose($file);
 					?>
 				</div>

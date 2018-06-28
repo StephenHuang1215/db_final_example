@@ -16,5 +16,5 @@ else echo "Error: " . $sql . "<br>" . $conn->error;
 ?>
 
 <head>
-	<meta http-equiv="refresh" content="2;url=../home.php">
+	<meta http-equiv="refresh" content="1;url=../home.php">
 </head>

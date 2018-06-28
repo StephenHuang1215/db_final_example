@@ -44,11 +44,13 @@
 			<!--Admin-->
 			<h3 class="title">新增公告</h3>
 			<br>
-			<form action='post.php' method='post'>
+			<form action='./post.php' method='post' enctype="multipart/form-data">
 				<h5 class="add_header">標題</h5>
 				<input type='text' name=title class='add_title'><br><br>
 				<h5 class="add_header">內容</h5>
 				<textarea name=description class='add_description'></textarea><br><br>
+    			Select image to upload:
+    			<input type="file" name="fileToUpload" id="fileToUpload">
 				<button type='reset' class="btn btn-default btn-event"> 取消</button>
 				<button type='submit' class="btn btn-default btn-event"> 發布</button>
 			</form>
