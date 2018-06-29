@@ -38,42 +38,45 @@
 		</nav>
 		<div class="container announce-wrapper">
 			<!--Admin-->
-			<a href="anncs/add.php"><button class="btn btn-default btn-event">新增公告</button></a>
-			<!--<a href="signup.php"><button class="btn btn-default btn-event">刪除公告</button></a>-->
+			<form method="post" action="anncs/delete.php">
+			<a href="anncs/add.php"><button type='button' class="btn btn-default btn-event">新增公告</button></a>
+			<button type='submit' class="btn btn-default btn-event"> 刪除勾選的項目</button>
 			<h3 class="title">最新公告</h3>
-			<div class="row">
-				<table class="table">
-					<?php
-					$servername = "localhost";
-	    			$username = "root";
-	    			$password = "tonytmwcmk15";
-	   				$databasename = "peweek";
-	    			$conn = new mysqli($servername, $username, $password, $databasename);
-				    if ($conn->connect_error) {
-				        die("Connection failed: " . $conn->connect_error);
-				    }
-
-				    $sql = "SELECT Announce_ID FROM Announcement ORDER BY Announce_ID DESC";
-				    $result = $conn->query($sql);
-				    if ($result->num_rows > 0) {
-					    while ($row = $result->fetch_assoc()) {
-					    	$ID = $row[Announce_ID];
-					    	$Text_Name = "./AnncsText/" . $ID . ".txt";
-					    	echo "<tr>";
-					    	$file = fopen($Text_Name, "r");
-					    	$title = fgets($file);
-					    	$date = fgets($file);
-					    	$date_length = strlen($date);
-					    	$date = substr($date,0, $date_length-11);
-					    	echo "<td class=\"td-data\">" . $date . "</td>";
-					    	echo "<td><a href=\"anncs.php?id=" . $ID . "\">" . $title . "</a></td>";
-					 		echo "<td><a href='anncs/delete.php?id=" . $ID . "' onclick=\"return confirm('使否確定要執行這個動作？');\"><button class=\"btn btn-default btn-event\">刪除公告</button></a>";
-					    	echo "</tr>";
+				<div class="row">
+					<table class="table">
+						<?php
+						$servername = "localhost";
+		    			$username = "root";
+		    			$password = "tonytmwcmk15";
+		   				$databasename = "peweek";
+		    			$conn = new mysqli($servername, $username, $password, $databasename);
+					    if ($conn->connect_error) {
+					        die("Connection failed: " . $conn->connect_error);
 					    }
-					} else echo "0 results";
-					?>
-				</table>
-			</div>
+
+					    $sql = "SELECT Announce_ID FROM Announcement ORDER BY Announce_ID DESC";
+					    $result = $conn->query($sql);
+					    if ($result->num_rows > 0) {
+						    while ($row = $result->fetch_assoc()) {
+						    	$ID = $row[Announce_ID];
+						    	$Text_Name = "./AnncsText/" . $ID . ".txt";
+						    	echo "<tr>";
+						    	$file = fopen($Text_Name, "r");
+						    	$title = fgets($file);
+						    	$date = fgets($file);
+						    	$date_length = strlen($date);
+						    	$date = substr($date,0, $date_length-11);
+						    	echo "<td class=\"td-data\" style='padding:23px'>" . $date . "</td>";
+						    	echo "<td style='padding:23px'><a href=\"anncs.php?id=" . $ID . "\">" . $title . "</a></td>";
+						 		echo "<td><a href='anncs/delete.php?id=" . $ID . "' onclick=\"return confirm('使否確定要執行這個動作？');\"><button type='button' class=\"btn btn-default btn-event\">刪除公告</button></a>";
+						 		echo "<td style='padding:23px 18px 18px 18px'><input type='checkbox' name='checkbox[]' value=" . $ID . ">";
+						    	echo "</tr>";
+						    }
+						} else echo "0 results";
+						?>			
+					</table>
+				</div>
+			</form>
 		</div>
 	</body>
 </html>

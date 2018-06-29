@@ -50,11 +50,10 @@
 				<h5 class="add_header">內容</h5>
 				<textarea name=description class='add_description'></textarea><br><br>
     			Select image to upload:
-    			<input type="file" name="fileToUpload" id="fileToUpload">
+    			<input type="file" name="fileToUpload" id="fileToUpload"><br>
 				<button type='reset' class="btn btn-default btn-event"> 取消</button>
 				<button type='submit' class="btn btn-default btn-event"> 發布</button>
 			</form>
-			</div>
 		</div>
 	</body>
 </html>

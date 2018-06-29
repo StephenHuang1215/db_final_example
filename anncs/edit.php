@@ -62,11 +62,10 @@
 	  			echo "</textarea><br><br>";
 				?>
 				Select image to upload:
-	    		<input type="file" name="fileToUpload" id="fileToUpload">
+	    		<input type="file" name="fileToUpload" id="fileToUpload"><br>
 				<button type='button' class="btn btn-default btn-event" onclick = "window.location.href='../home.php'"> 取消</button>
 				<button type='submit' class="btn btn-default btn-event"> 儲存</button>
 			</form>
-			</div>
 		</div>
 	</body>
 </html>
